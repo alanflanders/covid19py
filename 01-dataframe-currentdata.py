@@ -65,7 +65,7 @@ for i, row in df.iterrows():
         for column in list(df)[0:LEADCOLUMNS]:
             dict_transform[column].append(row[column])
 
-        casevalue = int(str(row[date]).replace(',',''))
+        casevalue = int(str(row[date]).replace(',','').split('.')[0])
 
         if cases != 0 and totalcases > 100:
              dict_transform["Cases Pct Changed"].append(((casevalue - totalcases)-cases) / cases)
